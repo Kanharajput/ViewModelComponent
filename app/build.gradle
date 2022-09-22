@@ -36,7 +36,9 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
-    def lifecycle_version = "2.6.0-alpha02"
+    // always use stable version it took my 1.5 hour to find the root of an error
+    def lifecycle_version = "2.5.1"
+
     // ViewModel
     implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
 }
