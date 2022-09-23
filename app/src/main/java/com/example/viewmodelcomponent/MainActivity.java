@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 // now if change the orientation then also count value will not change
 // because it is save in viewmodel
+// ViewModel delete the data only when the activity is completely destroyed or finished
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,7 +29,8 @@ public class MainActivity extends AppCompatActivity {
 
         button = findViewById(R.id.button);
         // get the ViewModel
-        mainViewModel = new ViewModelProvider(this).get(MainViewModel.class);
+        mainViewModel = new ViewModelProvider(this,new MainViewModelFactory(50))
+                                                            .get(MainViewModel.class);
 
         count_displayer = findViewById(R.id.countDisplayerTxt);
         count_displayer.setText(mainViewModel.getCountVal());      // set the current value of count
